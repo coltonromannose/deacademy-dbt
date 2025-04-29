@@ -21,6 +21,11 @@ sources:
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC
+  - name: purchase
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
 
 
 models:
@@ -46,3 +51,5 @@ models:
     description: "DBT Model for the sales table"
   - name: product
     description: "DBT Model for the product table"
+  - name: purchase
+    description: "DBT Model for the purchase table"
