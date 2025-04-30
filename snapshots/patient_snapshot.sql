@@ -1,15 +1,19 @@
 {% snapshot patient_snapshot %}
 
+
 {{
-    config(
-        target_schema='snapshots',
+    config
+    (
         strategy='check',
-        unique_key=['PATIENT_ID', 'UPDATED_AT'],
-        check_cols=['PATIENT_NAME', 'PATIENT_CONTACT_NUMBER', 'PATIENT_EMAIL_ID', 'PATIENT_ADDRESS']
+        unique_key='PATIENT_ID',
+        check_cols=['PATIENT_NAME','PATIENT_CONTACT_NUMBER','PATIENT_EMAIL_ID','PATIENT_ADDRESS']
     )
 }}
 
-SELECT *
-FROM {{ source('patient', 'PATIENT_SRC') }}
+
+select * from {{source('patient','PATIENT_SRC')}}
+
+
+
 
 {% endsnapshot %}
